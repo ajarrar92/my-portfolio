@@ -1,0 +1,29 @@
+.header_left,
+.header_right {
+	border-width: 1.875rem;
+}
+.header_left {
+	left: -3.7rem;
+}
+.header_right {
+	right: -3.7rem;
+}
+.header_bar {
+	transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		opacity 0.2s ease-out;
+	transform: translateZ(0);
+}
+
+.header_link a {
+	@apply sm:flex pl-6 pr-4 sm:px-6 sm:py-5 py-2 font-medium text-sm tracking-wider transform transition-transform duration-300 relative;
+}
+
+.active .header_bar:not(:first-of-type):not(:last-of-type) {
+	@apply opacity-0;
+}
+.active .header_bar:first-of-type {
+	transform: translateY(5.8px) rotate(-135deg);
+}
+.active .header_bar:last-of-type {
+	transform: translateY(-6px) rotate(135deg);
+}
